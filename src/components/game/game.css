@@ -1,0 +1,255 @@
+.container {
+    max-height: 36.458333333333336vw;
+    max-width: 36.458333333333336vw;
+    border-radius: 20px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: relative;
+}
+
+/*@.............Horizontal ruler............*/
+.h_ruler {
+    position: absolute;
+    background-color: var(--win-line);
+    width: 100%;
+    border-radius: 20px;
+    border-radius: 20px;
+    height: .4vw;
+    visibility: hidden;
+}
+
+.left-right {
+    top: 5.7vw;
+    animation: LR_animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.right-left {
+    top: 5.7vw;
+    animation: RL_animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+/*? Why top property in vw */
+/*= because when screen resizes line also shrinks. By this how line stays in one place */
+.middle-right {
+    top: 18vw;
+    animation: MR_animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.middle-left {
+    top: 18vw;
+    animation: ML_animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.bottom-right {
+    bottom: 5.9vw;
+    animation: BR_animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.bottom-left {
+    bottom: 5.9vw;
+    animation: BL_animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+@keyframes LR_animation {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@keyframes RL_animation {
+    0% {
+        width: 0%;
+        right: 0;
+    }
+
+    100% {
+        width: 100%;
+        right: 0;
+    }
+}
+
+@keyframes MR_animation {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@keyframes ML_animation {
+    0% {
+        width: 0%;
+        right: 0;
+    }
+
+    100% {
+        width: 100%;
+        right: 0;
+    }
+}
+
+@keyframes BR_animation {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@keyframes BL_animation {
+    0% {
+        width: 0%;
+        right: 0;
+    }
+
+    100% {
+        width: 100%;
+        right: 0;
+    }
+}
+
+
+
+
+/*@................Vertical ruler................*/
+.v_ruler {
+    position: absolute;
+    width: .4vw;
+    height: 100%;
+    background-color: var(--win-line);
+    border-radius: 20px;
+    visibility: hidden;
+}
+
+@keyframes vertical-animation {
+    from {
+        height: 0%;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+.left-top-bottom {
+    top: 0;
+    left: 5.77vw;
+    animation: vertical-animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.left-bottom-top {
+    bottom: 0;
+    left: 5.77vw;
+    animation: vertical-animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.middle-top-bottom {
+    top: 0;
+    left: 17.9vw;
+    animation: vertical-animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.middle-bottom-top {
+    bottom: 0;
+    left: 17.9vw;
+    animation: vertical-animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.right-top-bottom {
+    top: 0;
+    right: 5.84vw;
+    animation: vertical-animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.right-bottom-top {
+    bottom: 0;
+    right: 5.84vw;
+    animation: vertical-animation;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+/*@ Diagonal line css */
+.zero-nine {
+    position: absolute;
+    animation: vertical-animation;
+    transform-origin: top right;
+    top: 5vw;
+    left: 5vw;
+    rotate: 315deg;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.nine-zero {
+    position: absolute;
+    animation: vertical-animation;
+    transform-origin: bottom right;
+    bottom: 4.9vw;
+    right: 4.7vw;
+    rotate: 315deg;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.three-seven {
+    position: absolute;
+    animation: vertical-animation;
+    transform-origin: top right;
+    top: 5.5vw;
+    right: 5.5vw;
+    rotate: 45deg;
+    animation-duration: .5s;
+    visibility: visible;
+}
+
+.seven-three {
+    position: absolute;
+    animation: vertical-animation;
+    transform-origin: bottom left;
+    bottom: 4.9vw;
+    left: 4.5vw;
+    rotate: 45deg;
+    animation-duration: .5s;
+    visibility: visible;
+}

@@ -1,0 +1,28 @@
+/* Score bar design */
+.score {
+    position: absolute;
+    height: 100px;
+    right: 10vw;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6vw;
+}
+.score_count {
+    color: var(--lineColor);
+    font-family: Poppins;
+    font-size: 1.5vw;
+    font-weight: 600;
+    pointer-events: none;
+}
+.score_count::selection {
+    background-color: transparent;
+}
+.score-x {
+    color: #fff;
+}
+.score-o {
+    color: #fff;
+}
+

@@ -1,0 +1,59 @@
+#main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-background {
+    background: var(--default-bg);
+}
+
+/* Theme colors for body */
+.warm-flame {
+    background: #fad0c4;
+}
+
+.night-fade {
+    background: #a18cd1;
+}
+
+.rainy-ashvile {
+    background: #fbc2eb;
+}
+
+.winter-neva {
+    background: #c2e9fb;
+}
+
+.heavy-rain {
+    background: #e2ebf0;
+}
+
+.new-york {
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.kind-steel {
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}
+
+.polite-rumors {
+    background: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
+}
+
+.magic-lake {
+    background: linear-gradient(to top, #d5dee7 0%, #ffafbd 0%, #c9ffbf 100%);
+}
+
+
+.opacity-zero {
+    opacity: 0;
+}
+
+.click-bg {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+

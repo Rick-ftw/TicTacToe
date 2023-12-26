@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --lineColor: grey;
+  --win-line:  #fff;
+  --default-bg: #ACB6E5;
+}
+
