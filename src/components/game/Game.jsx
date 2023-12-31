@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { add, remove } from "./index"
 import { classContext } from '../../context/contex.jsx'
 import "./game.css"
 import Box from '../box/Box.jsx'
@@ -9,7 +8,7 @@ const Game = () => {
 
   return (
     <classContext.Provider value={[classes, setClasses]}>
-      <div className="container">
+      <div className="container" >
         <div className="wrapper">
           <Box c={classes} i="box1" />
           <Box c={classes} i="box2" />
@@ -21,12 +20,11 @@ const Game = () => {
           <Box c={classes} i="box8" />
           <Box c={classes} i="box9" />
           
-          <div className="h_ruler"></div>
-          <div className="v_ruler"></div>
+          <div id="h_line" className="h_ruler"></div>
+          <div id="v_line" className="v_ruler"></div>
         </div>
       </div>
     </classContext.Provider>
   )
 }
-
 export default Game
