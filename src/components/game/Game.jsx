@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { classContext } from '../../context/contex.jsx'
+import { classContext } from '../../context/AllContext.jsx'
 import "./game.css"
 import Box from '../box/Box.jsx'
 
@@ -19,7 +19,7 @@ const Game = () => {
           <Box c={classes} i="box7" />
           <Box c={classes} i="box8" />
           <Box c={classes} i="box9" />
-          
+
           <div id="line" className="win-line"></div>
         </div>
       </div>

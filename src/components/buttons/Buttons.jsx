@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import "./buttons.css"
-import { themeContext } from '../../context/contex';
+import { themeContext } from '../../context/AllContext';
 import randomThemeName from './button';
 
 const Buttons = () => {
   const [currentTheme, setCurrentTheme] = useContext(themeContext);
-  
+
   const changeTheme = () => {
     setCurrentTheme(randomThemeName());
   }
@@ -22,5 +22,5 @@ const Buttons = () => {
       </button>
     </div>
   )
-} 
+}
 export default Buttons;

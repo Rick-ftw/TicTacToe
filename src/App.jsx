@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react"
 import "./App.css"
 import { Buttons, Score, Game, Footer } from "./components/exports"
-import { themeContext } from "./context/contex";
+import { themeContext } from "./context/AllContext";
 
 function App() {
 
