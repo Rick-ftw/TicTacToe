@@ -150,7 +150,6 @@ function colorBG(input) {
 // if not gameover then add 'o' element else not
 function gameover() {
 
-
     for (let i = 0; i < 9; i++) {
 
         if (box[i].hasChildNodes()) {

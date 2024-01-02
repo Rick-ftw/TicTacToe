@@ -20,8 +20,7 @@ const Game = () => {
           <Box c={classes} i="box8" />
           <Box c={classes} i="box9" />
           
-          <div id="h_line" className="h_ruler"></div>
-          <div id="v_line" className="v_ruler"></div>
+          <div id="line" className="win-line"></div>
         </div>
       </div>
     </classContext.Provider>

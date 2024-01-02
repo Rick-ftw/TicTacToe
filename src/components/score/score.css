@@ -19,10 +19,10 @@
 .score_count::selection {
     background-color: transparent;
 }
-.score-x {
+#score-x {
     color: #fff;
 }
-.score-o {
+#score-o {
     color: #fff;
 }
 

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import "./buttons.css"
 import { themeContext } from '../../context/contex';
-import randomThemeName from './index';
+import randomThemeName from './button';
 
 const Buttons = () => {
   const [currentTheme, setCurrentTheme] = useContext(themeContext);

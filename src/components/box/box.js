@@ -1,22 +1,35 @@
+/* Tic Tac Toe 2024*/
+/*
+
+  This is made by Pranay (Rick) dutta  
+
+*/
+
+
 var firstColumn = [0, 0, 0];
 var secondColumn = [0, 0, 0];
 var thirdColumn = [0, 0, 0];
+let isGameover = false;
+let scoreX = 0;
+let scoreO = 0;
 
 async function addElement(e) {
+  const id = e.target.id;
 
   if (hasIcon(e)) {
     console.log("hasicon");
   } else {
     createXElement(e);
-    e.target.id ? authentication(e) : console.log("no id");;
+    id ? authentication(id) : console.log("no id");;
     whoWon();
 
-    if (autoAddJustification() == true) {
-      await automaticAdd();
+    if (autoAddJustification() == true && isGameover == false) {
+      const automatically_added_element = await automaticAdd();
+      authentication(automatically_added_element.id);
       whoWon();
     }
   }
-  console.log(firstColumn);
+
 }
 
 async function automaticAdd() {
@@ -59,15 +72,11 @@ function createOElement(allBox, random) {
 
 }
 
-
-
-
-function authentication(e) {
-  const id = e.target.id;
+function authentication(id) {
   const iElement = document.getElementById(id);
   const boxChild = iElement.childNodes[0].classList[0];
-
   let oneOrTwo;
+
   if (boxChild == 'fa-x') {
     oneOrTwo = 1;
   } else if (boxChild == 'fa-o') {
@@ -131,139 +140,137 @@ function autoAddJustification() {
 
 export { addElement, hasIcon, automaticAdd }
 
-
-
 function whoWon() {
 
-  //@ Condtions for "x" element with horizontal line..............
+  //! Condtions for "x" element with horizontal line..............
   if (firstColumn[0] === 1 && firstColumn[1] === 1 && firstColumn[2] === 1) {
     handleWin('X', 0);
   } else if (secondColumn[0] === 1 && secondColumn[1] === 1 && secondColumn[2] === 1) {
-    // handleWin('X', 1)
+    handleWin('X', 1)
   } else if (thirdColumn[0] === 1 && thirdColumn[1] === 1 && thirdColumn[2] === 1) {
-    // handleWin('X', 2)
+    handleWin('X', 2)
   }
-
 
   //* Conditions for "X" element with vertical line
   if (firstColumn[0] === 1 && secondColumn[0] === 1 && thirdColumn[0] === 1) {
-    handleWin('X', 4);
+    handleWin('X', 3);
   } else if (firstColumn[1] === 1 && secondColumn[1] === 1 && thirdColumn[1] === 1) {
-    vr.classList.add("middle-top-bottom");
-    setTimeout(() => {
-      vr.classList.remove("middle-top-bottom");
-      gameover();
-      updateScoreX();
-    }, 1200);
+    handleWin('X', 4)
   } else if (firstColumn[2] === 1 && secondColumn[2] === 1 && thirdColumn[2] === 1) {
-    vr.classList.add("right-top-bottom");
-    setTimeout(() => {
-      vr.classList.remove("right-top-bottom");
-      gameover();
-      updateScoreX();
-    }, 1200);
+    handleWin('X', 5)
   }
 
-  //* condition for "X" element with vertical line  
+  //* condition for "X" element with diagonal line  
   if (firstColumn[0] === 1 && secondColumn[1] === 1 && thirdColumn[2] === 1) {
-    vr.classList.add("zero-nine");
-    setTimeout(() => {
-      vr.classList.remove("zero-nine");
-      gameover();
-      updateScoreX();
-    }, 1200);
+    handleWin('X', 6)
   } else if (firstColumn[2] === 1 && secondColumn[1] === 1 && thirdColumn[0] === 1) {
-    vr.classList.add("three-seven");
-    setTimeout(() => {
-      vr.classList.remove("three-seven");
-      gameover();
-      updateScoreX();
-    }, 1200);
+    handleWin('X', 7)
   }
 
 
-
-
-  //@ Condition for "o" element with horizontal line..................
+  //! Condtions for "o" element with horizontal line..............
   if (firstColumn[0] === 2 && firstColumn[1] === 2 && firstColumn[2] === 2) {
-    // handleWin('O', 0);
+    handleWin('O', 0);
   } else if (secondColumn[0] === 2 && secondColumn[1] === 2 && secondColumn[2] === 2) {
-    hr.classList.add("middle-right")
-    setTimeout(() => {
-      hr.classList.remove("middle-right");
-      gameover();
-      updateScoreO();
-    }, 1200);
+    handleWin('O', 1)
   } else if (thirdColumn[0] === 2 && thirdColumn[1] === 2 && thirdColumn[2] === 2) {
-    hr.classList.add("bottom-right")
-    setTimeout(() => {
-      hr.classList.remove("bottom-right");
-      gameover();
-      updateScoreO();
-    }, 1200);
+    handleWin('O', 2)
   }
 
-
-  //Conditions for "O" element with vertical line
+  //* Conditions for "X" element with vertical line
   if (firstColumn[0] === 2 && secondColumn[0] === 2 && thirdColumn[0] === 2) {
-    vr.classList.add("left-top-bottom");
-    setTimeout(() => {
-      vr.classList.remove("left-top-bottom");
-      gameover();
-      updateScoreO();
-    }, 1200);
+    handleWin('O', 3);
   } else if (firstColumn[1] === 2 && secondColumn[1] === 2 && thirdColumn[1] === 2) {
-    vr.classList.add("middle-top-bottom");
-    setTimeout(() => {
-      vr.classList.remove("middle-top-bottom");
-      gameover();
-      updateScoreO();
-    }, 1200);
+    handleWin('O', 4)
   } else if (firstColumn[2] === 2 && secondColumn[2] === 2 && thirdColumn[2] === 2) {
-    vr.classList.add("right-top-bottom");
-    setTimeout(() => {
-      vr.classList.remove("right-top-bottom");
-      gameover();
-      updateScoreO();
-    }, 1200);
+    handleWin('O', 5)
   }
 
-  //condition for "X" element with vertical line  
+  //* condition for "X" element with diagonal line  
   if (firstColumn[0] === 2 && secondColumn[1] === 2 && thirdColumn[2] === 2) {
-    vr.classList.add("zero-nine");
-    setTimeout(() => {
-      vr.classList.remove("zero-nine");
-      gameover();
-      updateScoreO();
-    }, 1200);
+    handleWin('O', 6)
   } else if (firstColumn[2] === 2 && secondColumn[1] === 2 && thirdColumn[0] === 2) {
-    vr.classList.add("three-seven");
-    setTimeout(() => {
-      vr.classList.remove("three-seven");
-      gameover();
-      updateScoreO();
-    }, 1200);
+    handleWin('O', 7)
   }
 
 
 }
 
 function handleWin(symbol, value) {
-
+  console.log(symbol);
+  const horizontalLine = document.getElementById('line');
   const winClasses = [
     "left-right", "middle-right", "bottom-right",
     "left-top-bottom", "middle-top-bottom", "right-top-bottom",
     "zero-nine", "three-seven"
   ]
-  const horizontalLine = document.getElementById('h_line');
-  console.log(horizontalLine);
-  horizontalLine.classList.add(winClasses[value]);
-  setTimeout(() => {
-    horizontalLine.classList.remove(winClasses[value]);
-  }, 2000);
 
+  if (value == 0 || value == 1 || value == 2) {
+    horizontalLine.classList.add(winClasses[value]);
+    setTimeout(() => {
+      horizontalLine.classList.remove(winClasses[value]);
+    }, 1200);
+  } else {
+    horizontalLine.classList.remove("win-line");
+    horizontalLine.classList.add(winClasses[value]);
+    setTimeout(() => {
+      horizontalLine.classList.remove(winClasses[value]);
+    }, 1200);
+  }
 
-
-  // symbol == 'X' ? updateScoreX() : updateScoreO();
-  // gameover();
+  setScore(symbol);
 }
+
+
+function updateScore() {
+  let score_x_Span = document.getElementById("score-x");
+  let score_o_Span = document.getElementById("score-o");
+
+  score_x_Span.innerText = ` ${scoreX}`;
+  score_o_Span.innerText = ` ${scoreO}`;
+}
+
+
+function setScore(symbol) {
+  if (symbol == 'X') {
+    scoreX++;
+    setTimeout(() => {
+      updateScore();
+      gameover();
+    }, 1200);
+  } else if (symbol == 'O') {
+    scoreO++;
+    setTimeout(() => {
+      updateScore();
+      gameover();
+    }, 1200);
+  }
+}
+
+
+function gameover() {
+  const box = document.getElementsByClassName("box");
+  for (let i = 0; i < 9; i++) {
+
+    if (box[i].hasChildNodes()) {
+      let id = box[i].id;
+      let child = document.querySelector(`#${id} i`);
+      box[i].removeChild(child);
+
+    } else {
+      console.log("not elments");
+    }
+  }
+
+  //All the values goes to zero
+  firstColumn = [0, 0, 0];
+  secondColumn = [0, 0, 0];
+  thirdColumn = [0, 0, 0];
+
+  isGameover = true;
+  setTimeout(() => { isGameover = false }, 1000);
+}
+
+
+
+
