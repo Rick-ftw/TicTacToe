@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react'
-import { classContext } from '../../context/AllContext.jsx'
-import "./game.css"
-import Box from '../box/Box.jsx'
+import React, { useContext, useState } from "react";
+import { classContext } from "../../context/AllContext.jsx";
+import "./game.css";
+import Box from "../box/Box.jsx";
 
 const Game = () => {
   const [classes, setClasses] = useState("box");
 
   return (
     <classContext.Provider value={[classes, setClasses]}>
-      <div className="container" >
+      <div className="container">
         <div className="wrapper">
           <Box c={classes} i="box1" />
           <Box c={classes} i="box2" />
@@ -24,6 +24,6 @@ const Game = () => {
         </div>
       </div>
     </classContext.Provider>
-  )
-}
-export default Game
+  );
+};
+export default Game;
