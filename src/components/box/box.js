@@ -1,15 +1,18 @@
-/* Tic Tac Toe 2024*/
+/**
+ * Tic Tac Toe 2024
+ *
+ * @format
+ */
+
 /*
 
   This is made by Pranay (Rick) dutta  
 
 */
 
-
 var firstColumn = [0, 0, 0];
 var secondColumn = [0, 0, 0];
 var thirdColumn = [0, 0, 0];
-let isGameover = false;
 let scoreX = 0;
 let scoreO = 0;
 
@@ -17,19 +20,22 @@ async function addElement(e) {
   const id = e.target.id;
 
   if (hasIcon(e)) {
-    console.log("hasicon");
+    console.log("has icon");
   } else {
     createXElement(e);
-    id ? authentication(id) : console.log("no id");;
-    whoWon();
+    id ? authentication(id) : console.log("no id");
+    isStackFull();
 
-    if (autoAddJustification() == true && isGameover == false) {
-      const automatically_added_element = await automaticAdd();
-      authentication(automatically_added_element.id);
-      whoWon();
+    if (autoAddJustification() == true) {
+      const flag = await isXWon();
+      if (flag == false) {
+        const automatically_added_element = await automaticAdd();
+        authentication(automatically_added_element.id);
+        isOWon();
+        isStackFull();
+      }
     }
   }
-
 }
 
 async function automaticAdd() {
@@ -47,7 +53,6 @@ async function automaticAdd() {
       return;
     }
   }
-
 }
 
 function hasIcon(e) {
@@ -69,7 +74,6 @@ function createOElement(allBox, random) {
   const child = document.createElement("i");
   child.classList.add("fa-o", "fa-solid");
   allBox[random].appendChild(child);
-
 }
 
 function authentication(id) {
@@ -77,9 +81,9 @@ function authentication(id) {
   const boxChild = iElement.childNodes[0].classList[0];
   let oneOrTwo;
 
-  if (boxChild == 'fa-x') {
+  if (boxChild == "fa-x") {
     oneOrTwo = 1;
-  } else if (boxChild == 'fa-o') {
+  } else if (boxChild == "fa-o") {
     oneOrTwo = 2;
   }
 
@@ -112,13 +116,10 @@ function authentication(id) {
       thirdColumn[2] = oneOrTwo;
       break;
     default:
-      console.log("Array intialization error");
+      console.log("Array initialization error");
       break;
   }
-
-
 }
-
 
 function autoAddJustification() {
   const allBox = document.getElementsByClassName("box");
@@ -132,78 +133,129 @@ function autoAddJustification() {
 
   if (filteredList.length <= 8) {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
 
-export { addElement, hasIcon, automaticAdd }
+export { addElement, hasIcon, automaticAdd };
 
-function whoWon() {
-
-  //! Condtions for "x" element with horizontal line..............
+async function isXWon() {
+  //! Conditions for "x" element with horizontal line..............
   if (firstColumn[0] === 1 && firstColumn[1] === 1 && firstColumn[2] === 1) {
-    handleWin('X', 0);
-  } else if (secondColumn[0] === 1 && secondColumn[1] === 1 && secondColumn[2] === 1) {
-    handleWin('X', 1)
-  } else if (thirdColumn[0] === 1 && thirdColumn[1] === 1 && thirdColumn[2] === 1) {
-    handleWin('X', 2)
+    handleWin("X", 0);
+    return true;
+  } else if (
+    secondColumn[0] === 1 &&
+    secondColumn[1] === 1 &&
+    secondColumn[2] === 1
+  ) {
+    handleWin("X", 1);
+    return true;
+  } else if (
+    thirdColumn[0] === 1 &&
+    thirdColumn[1] === 1 &&
+    thirdColumn[2] === 1
+  ) {
+    handleWin("X", 2);
+    return true;
   }
 
   //* Conditions for "X" element with vertical line
   if (firstColumn[0] === 1 && secondColumn[0] === 1 && thirdColumn[0] === 1) {
-    handleWin('X', 3);
-  } else if (firstColumn[1] === 1 && secondColumn[1] === 1 && thirdColumn[1] === 1) {
-    handleWin('X', 4)
-  } else if (firstColumn[2] === 1 && secondColumn[2] === 1 && thirdColumn[2] === 1) {
-    handleWin('X', 5)
+    handleWin("X", 3);
+    return true;
+  } else if (
+    firstColumn[1] === 1 &&
+    secondColumn[1] === 1 &&
+    thirdColumn[1] === 1
+  ) {
+    handleWin("X", 4);
+    return true;
+  } else if (
+    firstColumn[2] === 1 &&
+    secondColumn[2] === 1 &&
+    thirdColumn[2] === 1
+  ) {
+    handleWin("X", 5);
+    return true;
   }
 
-  //* condition for "X" element with diagonal line  
+  //* condition for "X" element with diagonal line
   if (firstColumn[0] === 1 && secondColumn[1] === 1 && thirdColumn[2] === 1) {
-    handleWin('X', 6)
-  } else if (firstColumn[2] === 1 && secondColumn[1] === 1 && thirdColumn[0] === 1) {
-    handleWin('X', 7)
+    handleWin("X", 6);
+    return true;
+  } else if (
+    firstColumn[2] === 1 &&
+    secondColumn[1] === 1 &&
+    thirdColumn[0] === 1
+  ) {
+    handleWin("X", 7);
+    return true;
   }
 
+  return false;
+}
 
-  //! Condtions for "o" element with horizontal line..............
+function isOWon() {
+  //! Conditions for "o" element with horizontal line..............
   if (firstColumn[0] === 2 && firstColumn[1] === 2 && firstColumn[2] === 2) {
-    handleWin('O', 0);
-  } else if (secondColumn[0] === 2 && secondColumn[1] === 2 && secondColumn[2] === 2) {
-    handleWin('O', 1)
-  } else if (thirdColumn[0] === 2 && thirdColumn[1] === 2 && thirdColumn[2] === 2) {
-    handleWin('O', 2)
+    handleWin("O", 0);
+  } else if (
+    secondColumn[0] === 2 &&
+    secondColumn[1] === 2 &&
+    secondColumn[2] === 2
+  ) {
+    handleWin("O", 1);
+  } else if (
+    thirdColumn[0] === 2 &&
+    thirdColumn[1] === 2 &&
+    thirdColumn[2] === 2
+  ) {
+    handleWin("O", 2);
   }
 
   //* Conditions for "X" element with vertical line
   if (firstColumn[0] === 2 && secondColumn[0] === 2 && thirdColumn[0] === 2) {
-    handleWin('O', 3);
-  } else if (firstColumn[1] === 2 && secondColumn[1] === 2 && thirdColumn[1] === 2) {
-    handleWin('O', 4)
-  } else if (firstColumn[2] === 2 && secondColumn[2] === 2 && thirdColumn[2] === 2) {
-    handleWin('O', 5)
+    handleWin("O", 3);
+  } else if (
+    firstColumn[1] === 2 &&
+    secondColumn[1] === 2 &&
+    thirdColumn[1] === 2
+  ) {
+    handleWin("O", 4);
+  } else if (
+    firstColumn[2] === 2 &&
+    secondColumn[2] === 2 &&
+    thirdColumn[2] === 2
+  ) {
+    handleWin("O", 5);
   }
 
-  //* condition for "X" element with diagonal line  
+  //* condition for "O" element with diagonal line
   if (firstColumn[0] === 2 && secondColumn[1] === 2 && thirdColumn[2] === 2) {
-    handleWin('O', 6)
-  } else if (firstColumn[2] === 2 && secondColumn[1] === 2 && thirdColumn[0] === 2) {
-    handleWin('O', 7)
+    handleWin("O", 6);
+  } else if (
+    firstColumn[2] === 2 &&
+    secondColumn[1] === 2 &&
+    thirdColumn[0] === 2
+  ) {
+    handleWin("O", 7);
   }
-
-
 }
 
 function handleWin(symbol, value) {
-  console.log(symbol);
-  const horizontalLine = document.getElementById('line');
+  const horizontalLine = document.getElementById("line");
   const winClasses = [
-    "left-right", "middle-right", "bottom-right",
-    "left-top-bottom", "middle-top-bottom", "right-top-bottom",
-    "zero-nine", "three-seven"
-  ]
+    "left-right",
+    "middle-right",
+    "bottom-right",
+    "left-top-bottom",
+    "middle-top-bottom",
+    "right-top-bottom",
+    "zero-nine",
+    "three-seven",
+  ];
 
   if (value == 0 || value == 1 || value == 2) {
     horizontalLine.classList.add(winClasses[value]);
@@ -221,7 +273,6 @@ function handleWin(symbol, value) {
   setScore(symbol);
 }
 
-
 function updateScore() {
   let score_x_Span = document.getElementById("score-x");
   let score_o_Span = document.getElementById("score-o");
@@ -230,35 +281,46 @@ function updateScore() {
   score_o_Span.innerText = ` ${scoreO}`;
 }
 
-
 function setScore(symbol) {
-  if (symbol == 'X') {
+  if (symbol == "X") {
     scoreX++;
     setTimeout(() => {
       updateScore();
-      gameover();
+      resetGame();
     }, 1200);
-  } else if (symbol == 'O') {
+  } else if (symbol == "O") {
     scoreO++;
     setTimeout(() => {
       updateScore();
-      gameover();
+      resetGame();
     }, 1200);
   }
 }
 
-
-function gameover() {
+function isStackFull() {
+  const box = document.getElementsByClassName("box");
+  let childArray = [];
+  for (let i = 0; i < 9; i++) {
+    if (box[i].hasChildNodes()) {
+      let id = box[i].id;
+      let child = document.querySelector(`#${id} i`);
+      childArray.push(child);
+      if (childArray.length == 9) {
+        resetGame();
+        console.log(childArray);
+      }
+    }
+  }
+}
+function resetGame() {
   const box = document.getElementsByClassName("box");
   for (let i = 0; i < 9; i++) {
-
     if (box[i].hasChildNodes()) {
       let id = box[i].id;
       let child = document.querySelector(`#${id} i`);
       box[i].removeChild(child);
-
     } else {
-      console.log("not elments");
+      console.log("not elements");
     }
   }
 
@@ -266,11 +328,4 @@ function gameover() {
   firstColumn = [0, 0, 0];
   secondColumn = [0, 0, 0];
   thirdColumn = [0, 0, 0];
-
-  isGameover = true;
-  setTimeout(() => { isGameover = false }, 1000);
 }
-
-
-
-

@@ -1,14 +1,14 @@
 /* Footer design */
 .footer-text {
-    font-family: Poppins;
-    position: absolute;
-    bottom: 0;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    color: var(--lineColor);
+  font-family: Poppins;
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  color: var(--lineColor);
 }
 
 .footer-text::selection {
-    color: #fff;
-    background-color: #4a4a4a;
+  color: #fff;
+  background-color: #4a4a4a;
 }

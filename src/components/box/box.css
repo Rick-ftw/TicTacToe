@@ -1,63 +1,63 @@
 .box {
-    width: calc(36.458333333333336vw / 3);
-    height: calc(36.458333333333336vw / 3);
+  width: calc(36.458333333333336vw / 3);
+  height: calc(36.458333333333336vw / 3);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #box1 {
-    border: solid var(--lineColor);
-    border-width: 0px 2px 2px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 2px 2px 0px;
 }
 
 #box2 {
-    border: solid var(--lineColor);
-    border-width: 0px 2px 2px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 2px 2px 0px;
 }
 
 #box3 {
-    border: solid var(--lineColor);
-    border-width: 0px 0px 2px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 0px 2px 0px;
 }
 
 #box4 {
-    border: solid var(--lineColor);
-    border-width: 0px 2px 2px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 2px 2px 0px;
 }
 
 #box5 {
-    border: solid var(--lineColor);
-    border-width: 0px 2px 2px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 2px 2px 0px;
 }
 
 #box6 {
-    border: solid var(--lineColor);
-    border-width: 0px 0px 2px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 0px 2px 0px;
 }
 
 #box7 {
-    border: solid var(--lineColor);
-    border-width: 0px 2px 0px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 2px 0px 0px;
 }
 
 #box8 {
-    border: solid var(--lineColor);
-    border-width: 0px 2px 0px 0px;
+  border: solid var(--lineColor);
+  border-width: 0px 2px 0px 0px;
 }
 
 /* Css for i tag element */
 .fa-x {
-    font-size: 5vw;
-    color: #fff;
+  font-size: 5vw;
+  color: #fff;
 }
 
 .fa-o {
-    font-size: 5vw;
-    color: #fff;
+  font-size: 5vw;
+  color: #fff;
 }

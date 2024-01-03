@@ -6,7 +6,6 @@
 
 :root {
   --lineColor: grey;
-  --win-line:  #fff;
-  --default-bg: #ACB6E5;
+  --win-line: #fff;
+  --default-bg: #acb6e5;
 }
-
