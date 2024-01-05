@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import "./buttons.css";
 import { themeContext } from "../../context/AllContext";
 import randomThemeName from "./button";
@@ -18,12 +18,13 @@ const Buttons = () => {
       <button
         id="theme"
         className="theme btn"
-        onClick={(e) => {
+        onClick={() => {
           changeTheme();
         }}
       >
         Change Theme
       </button>
+      <p className="current_theme_name">Theme: {currentTheme}</p>
     </div>
   );
 };

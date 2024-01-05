@@ -9,7 +9,30 @@
   left: 30px;
   gap: 20px;
 }
+.current_theme_name {
+  font-family: Poppins;
+  font-size: 0.7vw;
+  opacity: 80%;
+  animation: Glow 7s infinite alternate;
+  transition: ease-in-out;
+  padding: 13px 10px;
+  filter: blur(0.5px);
+  cursor: pointer;
+}
+.current_theme_name:hover{
+  filter: blur(0px);
+}
 
+@keyframes Glow {
+  from {
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+  to {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+}
 /* Restart button */
 .btn {
   align-items: center;
