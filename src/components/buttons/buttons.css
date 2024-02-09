@@ -86,3 +86,6 @@ a {
 .btn-primary:hover {
   border-color: lightcyan;
 }
+@media (max-width: 768px) and (min-width: 370px) {
+  
+}
