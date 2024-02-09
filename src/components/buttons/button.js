@@ -1,33 +1,38 @@
-export function randomThemeName() {
+export async function randomThemeName() {
   const themeContainer = [
-    "night-fade",
-    "warm-flame",
-    "rainy-asheville",
-    "winter-neva",
-    "heavy-rain",
-    "new-york",
-    "polite-rumors",
-    "magic-lake",
-    "loon-crest",
-    "dirty-beauty",
-    "soft-cherish",
-    "premium-dark",
-    "cold-evening",
-    "passionate-bed",
-    "eternal-constance",
-    "midnight-bloom",
+    "warm-flame",         //light
+    "rainy-asheville",    //light
+    "winter-neva",        //light
+    "heavy-rain",         //light
+    "new-york",           //light
+    "magic-lake",         //light
+    "dirty-beauty",       //light
+    "night-fade",         //light-dark
+    "loon-crest",         //light-dark
+    "soft-cherish",       //dark
+    "premium-dark",       //dark
+    "cold-evening",       //dark
+    "polite-rumors",      //dark
+    "passionate-bed",     //dark
+    "eternal-constance",  //dark
+    "midnight-bloom",     //dark
 
   ];
   const randomNumber = Math.floor(Math.random() * themeContainer.length);
   const randomName = themeContainer[randomNumber];
-  return randomName;
+  return [randomName, randomNumber];
 }
 
-export function changeLineColor() {
-  const randomColor = ["white", "black", "grey"];
-  const randomNumber = Math.floor( Math.random() * randomColor.length);
+export function changeLineColor(themeNumber) {
+  const colors = ["black", "grey", "white"];
   const r = document.querySelector(":root");
-  const rootVars = getComputedStyle(r);
-  console.log("The value of --lineColor is: " + rootVars.getPropertyValue('--lineColor'));
-  r.style.setProperty('--lineColor', randomColor[randomNumber]);
+  // const rootVars = getComputedStyle(r);
+  // console.log("The value of --lineColor is: " + rootVars.getPropertyValue('--lineColor'));
+  if (themeNumber < 7) {
+    r.style.setProperty('--lineColor', colors[0]);
+  } else if (themeNumber > 6 && themeNumber < 9) {
+    r.style.setProperty('--lineColor', colors[1]);
+  } else {
+    r.style.setProperty('--lineColor', colors[2]);
+  }
 }

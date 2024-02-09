@@ -1,3 +1,5 @@
+/** @format */
+
 .nav_btn_container {
   height: 155px;
   width: fit-content;
@@ -16,11 +18,10 @@
   animation: Glow 7s infinite alternate;
   transition: ease-in-out;
   padding: 13px 10px;
-  filter: blur(0.5px);
   cursor: pointer;
 }
-.current_theme_name:hover{
-  filter: blur(0px);
+.current_theme_name:hover {
+  visibility: collapse;
 }
 
 @keyframes Glow {
