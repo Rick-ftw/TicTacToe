@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import "./buttons.css";
 import { themeContext } from "../../context/AllContext";
-import {randomThemeName, changeLineColor} from "./button";
+import { randomThemeName, changeLineColor } from "./button";
 
 const Buttons = () => {
   const [currentTheme, setCurrentTheme] = useContext(themeContext);
 
-  const changeTheme = () => {
-    changeLineColor();
-    setCurrentTheme(randomThemeName());
+  const changeTheme = async () => {
+    const [randomName, randomNumber] = await randomThemeName();
+    setCurrentTheme(randomName);
+    changeLineColor(randomNumber);
   };
   return (
     <div className="nav_btn_container">
