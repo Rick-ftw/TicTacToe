@@ -1,4 +1,9 @@
-/* Score bar design */
+/**
+ * Score bar design
+ *
+ * @format
+ */
+
 .score {
   position: absolute;
   height: 100px;
@@ -24,4 +29,15 @@
 }
 #score-o {
   color: #fff;
+}
+
+@media (max-width: 768px) and (min-width: 470px) {
+  .score_count {
+    font-size: 3vw !important;
+  }
+}
+@media (max-width: 469px) and (min-width: 200px) {
+  .score_count {
+    font-size: 4vw !important;
+  }
 }

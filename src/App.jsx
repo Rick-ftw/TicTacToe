@@ -12,7 +12,7 @@ function App() {
       updateScoreX((prevValue) => {
         return prevValue + 1;
       });
-    } else if(symbolName == 'O') {
+    } else if (symbolName == 'O') {
       updateScoreO((prevValue) => {
         return prevValue + 1;
       });
@@ -21,10 +21,16 @@ function App() {
   return (
     <themeContext.Provider value={[currentTheme, setCurrentTheme]}>
       <div id="main" className={currentTheme}>
-        <Buttons />
-        <Score scoreX={scoreX} scoreO={scoreO} />
-        <Game upScore={(symbolName) => upScore(symbolName)} />
-        <Footer />
+        <nav>
+          <Buttons />
+          <Score scoreX={scoreX} scoreO={scoreO} />
+        </nav>
+        <body>
+          <Game upScore={(symbolName) => upScore(symbolName)} />
+        </body>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </themeContext.Provider>
   );

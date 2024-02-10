@@ -159,3 +159,55 @@
   font-size: 5vw;
   color: #fff;
 }
+@media (max-width: 768px) and (min-width: 370px) {
+  .container {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+  .wrapper {
+    width: 66vw !important;
+    height: 66vw !important;
+  }
+  .box {
+    height: 22vw !important;
+    width: 22vw !important;
+  }
+  .fa-x,
+  .fa-o {
+    font-size: 13vw !important;
+  }
+  .middle-top-bottom {
+    left: 32.5vw !important;
+    width: 0.7vw !important;
+  }
+  .left-right {
+    top: 10.4vw !important;
+    height: 0.7vw !important;
+  }
+  .middle-right {
+    height: 0.7vw !important;
+    top: 32.5vw !important;
+  }
+  .bottom-right {
+    bottom: 10.9vw !important;
+    height: 0.7vw !important;
+  }
+  .left-top-bottom {
+    width: 0.7vw !important;
+    left: 10.77vw !important;
+  }
+  .right-top-bottom {
+    width: 0.7vw !important;
+    right: 10.84vw !important;
+  }
+  .zero-nine {
+    top: 9vw !important;
+    left: 9vw !important;
+    width: 0.7vw !important;
+  }
+  .three-seven {
+    top: 9vw !important;
+    right: 9vw !important;
+    width: 0.7vw !important;
+  }
+}
