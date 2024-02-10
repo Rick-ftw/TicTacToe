@@ -28,7 +28,7 @@ const Game = (props) => {
     setWinClass(winClasses[value])
     setTimeout(() => {
       setCall(true)
-      // resetBoard();
+      resetBoard();
     }, 500);
   }, [call, upScore]);
 
