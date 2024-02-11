@@ -1,11 +1,16 @@
-/* Footer design */
+/**
+ * Footer design
+ *
+ * @format
+ */
+
 .footer-text {
   font-family: Poppins;
   position: absolute;
   bottom: 0;
   transform: translate(-50%, -50%);
   left: 50%;
-  color: var(--lineColor);
+  color: var(--secondary-color);
 }
 
 .footer-text::selection {

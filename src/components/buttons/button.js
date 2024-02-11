@@ -27,12 +27,12 @@ export function changeLineColor(themeNumber) {
   const colors = ["black", "grey", "white"];
   const r = document.querySelector(":root");
   // const rootVars = getComputedStyle(r);
-  // console.log("The value of --lineColor is: " + rootVars.getPropertyValue('--lineColor'));
+  // console.log("The value of --secondary-color is: " + rootVars.getPropertyValue('--lineColor'));
   if (themeNumber < 7) {
-    r.style.setProperty('--lineColor', colors[0]);
+    r.style.setProperty('--secondary-color', colors[0]);
   } else if (themeNumber > 6 && themeNumber < 9) {
-    r.style.setProperty('--lineColor', colors[1]);
+    r.style.setProperty('--secondary-color', colors[1]);
   } else {
-    r.style.setProperty('--lineColor', colors[2]);
+    r.style.setProperty('--secondary-color', colors[2]);
   }
 }

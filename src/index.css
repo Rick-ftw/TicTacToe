@@ -5,7 +5,8 @@
 }
 
 :root {
-  --lineColor: grey;
+  --secondary-color: #fff;
   --win-lineColor: #fff;
-  --default-bg: #acb6e5;
+  --font-size: 1vw;
+  --font-weight: 400;
 }

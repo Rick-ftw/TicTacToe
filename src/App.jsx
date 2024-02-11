@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import { Buttons, Score, Game, Footer } from "./components/exports";
+import { Buttons, Score, Easy, Footer } from "./components/exports";
 import { themeContext } from "./context/AllContext";
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState("main-background");
+  const [currentTheme, setCurrentTheme] = useState("premium-dark");
   const [scoreX, updateScoreX] = useState(0);
   const [scoreO, updateScoreO] = useState(0);
   const upScore = (symbolName) => {
@@ -26,7 +26,7 @@ function App() {
           <Score scoreX={scoreX} scoreO={scoreO} />
         </nav>
         <body>
-          <Game upScore={(symbolName) => upScore(symbolName)} />
+          <Easy upScore={(symbolName) => upScore(symbolName)} />
         </body>
         <footer>
           <Footer />
