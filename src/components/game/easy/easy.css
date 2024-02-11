@@ -110,42 +110,42 @@
 }
 
 #box1 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 2px 2px 0px;
 }
 
 #box2 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 2px 2px 0px;
 }
 
 #box3 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 0px 2px 0px;
 }
 
 #box4 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 2px 2px 0px;
 }
 
 #box5 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 2px 2px 0px;
 }
 
 #box6 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 0px 2px 0px;
 }
 
 #box7 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 2px 0px 0px;
 }
 
 #box8 {
-  border: solid var(--lineColor);
+  border: solid var(--secondary-color);
   border-width: 0px 2px 0px 0px;
 }
 

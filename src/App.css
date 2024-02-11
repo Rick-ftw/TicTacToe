@@ -9,10 +9,6 @@
   justify-content: center;
 }
 
-.main-background {
-  background: var(--default-bg);
-}
-
 /* Theme colors for body */
 .warm-flame {
   background: #fad0c4;

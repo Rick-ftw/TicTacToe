@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types"
-import "./game.css";
+import "./easy.css";
 
-const Game = (props) => {
+const Easy = (props) => {
   const { upScore } = props;
   const [matrix, setMatrix] = useState(Array(9).fill(0));
   const [winClass, setWinClass] = useState("");
@@ -149,7 +149,7 @@ const Game = (props) => {
   );
 }
 
-Game.propTypes = {
+Easy.propTypes = {
   upScore: PropTypes.func,
 }
-export default Game;
+export default Easy;
