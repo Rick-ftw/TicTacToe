@@ -1,8 +1,47 @@
-# Tic tac toe 
+# Tic Tac Toe Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Tic Tac Toe game built using React, JavaScript, CSS, Material-UI, and HTML. It is hosted on Vercel.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Tic Tac Toe Game](#tic-tac-toe-game)
+  - [Table of Contents](#table-of-contents)
+  - [Demo](#demo)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Demo
+
+You can play the game [https://tic-tac-toe-eight-henna.vercel.app](#)
+
+## Features
+
+- Play Tic Tac Toe with a friend
+- Responsive design
+- Built with React and Material-UI for a modern user interface
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/) 
+installed on your machine.
+
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your-username/tic-tac-toe.git
+2. Install all the packages
+   ```sh
+   npm install or yarn install
+3. Run this project on localhost
+   ```sh
+   npm run dev
+  
