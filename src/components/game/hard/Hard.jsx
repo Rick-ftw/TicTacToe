@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types"
-import "./easy.css";
+import "./hard.css";
 
-const Easy = (props) => {
+const Hard = (props) => {
   const { upScore } = props;
   const [matrix, setMatrix] = useState(Array(9).fill(0));
   const [winClass, setWinClass] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [stateSymbol, setSymbol] = useState("");
   const [call, setCall] = useState(true);
 
@@ -149,7 +150,7 @@ const Easy = (props) => {
   );
 }
 
-Easy.propTypes = {
+Hard.propTypes = {
   upScore: PropTypes.func,
 }
-export default Easy;
+export default Hard;
