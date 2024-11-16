@@ -14,24 +14,14 @@
 .current_theme_name {
   font-family: Poppins;
   font-size: 0.7vw;
-  opacity: 80%;
+  opacity: 100%;
+  color: var(--secondary-color);
   animation: Glow 7s infinite alternate;
   transition: ease-in-out;
   padding: 13px 10px;
   cursor: pointer;
 }
-.current_theme_name:hover {
-  visibility: collapse;
-}
 
-@keyframes Glow {
-  from {
-    border-radius: 7px;
-  }
-  to {
-    color: var(--secondary-color);
-  }
-}
 /* Restart button */
 .btn {
   align-items: center;

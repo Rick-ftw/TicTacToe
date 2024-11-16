@@ -1,0 +1,213 @@
+/** @format */
+
+.container {
+  max-height: 36.458333333333336vw;
+  max-width: 36.458333333333336vw;
+  border-radius: 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  position: relative;
+}
+
+/* strike line to showcase win  */
+#line {
+  position: absolute;
+  background-color: var(--win-lineColor);
+  width: 100%;
+  border-radius: 20px;
+  height: 0.4vw;
+  visibility: hidden;
+}
+
+.left-right {
+  top: 5.7vw;
+  visibility: visible !important;
+}
+
+/*? Why top property in vw */
+/*= because when screen resizes line also shrinks. By this how line stays in one place */
+.middle-right {
+  top: 18vw;
+  visibility: visible !important;
+}
+
+.bottom-right {
+  bottom: 5.9vw;
+  visibility: visible !important;
+}
+
+.left-top-bottom {
+  position: absolute;
+  background-color: var(--win-lineColor);
+  width: 0.4vw !important;
+  height: 100% !important;
+  top: 0;
+  left: 5.77vw;
+  visibility: visible !important;
+}
+
+.middle-top-bottom {
+  position: absolute;
+  background-color: var(--win-lineColor);
+  width: 0.4vw !important;
+  height: 100% !important;
+  top: 0;
+  left: 17.9vw;
+  visibility: visible !important;
+}
+
+.right-top-bottom {
+  position: absolute;
+  background-color: var(--win-lineColor);
+  width: 0.4vw !important;
+  height: 100% !important;
+  top: 0;
+  right: 5.84vw;
+  visibility: visible !important;
+}
+
+/*! Diagonal line css */
+.zero-nine {
+  position: absolute;
+  background-color: var(--win-lineColor);
+  width: 0.4vw !important;
+  transform-origin: top right;
+  height: 100% !important;
+  top: 5vw;
+  left: 5vw;
+  rotate: 315deg;
+  visibility: visible !important;
+}
+
+.three-seven {
+  position: absolute;
+  background-color: var(--win-lineColor);
+  width: 0.4vw !important;
+  transform-origin: top right;
+  top: 5.5vw;
+  right: 5.5vw;
+  rotate: 45deg;
+  visibility: visible !important;
+  height: 100% !important;
+}
+
+/* Box css */
+.box {
+  width: calc(36.458333333333336vw / 3);
+  height: calc(36.458333333333336vw / 3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+#box1 {
+  border: solid var(--secondary-color);
+  border-width: 0px 2px 2px 0px;
+}
+
+#box2 {
+  border: solid var(--secondary-color);
+  border-width: 0px 2px 2px 0px;
+}
+
+#box3 {
+  border: solid var(--secondary-color);
+  border-width: 0px 0px 2px 0px;
+}
+
+#box4 {
+  border: solid var(--secondary-color);
+  border-width: 0px 2px 2px 0px;
+}
+
+#box5 {
+  border: solid var(--secondary-color);
+  border-width: 0px 2px 2px 0px;
+}
+
+#box6 {
+  border: solid var(--secondary-color);
+  border-width: 0px 0px 2px 0px;
+}
+
+#box7 {
+  border: solid var(--secondary-color);
+  border-width: 0px 2px 0px 0px;
+}
+
+#box8 {
+  border: solid var(--secondary-color);
+  border-width: 0px 2px 0px 0px;
+}
+
+/* Css for i tag element */
+.fa-x {
+  font-size: 5vw;
+  color: #fff;
+}
+
+.fa-o {
+  font-size: 5vw;
+  color: #fff;
+}
+@media (max-width: 768px) and (min-width: 370px) {
+  .container {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+  .wrapper {
+    width: 66vw !important;
+    height: 66vw !important;
+  }
+  .box {
+    height: 22vw !important;
+    width: 22vw !important;
+  }
+  .fa-x,
+  .fa-o {
+    font-size: 13vw !important;
+  }
+  .middle-top-bottom {
+    left: 32.5vw !important;
+    width: 0.7vw !important;
+  }
+  .left-right {
+    top: 10.4vw !important;
+    height: 0.7vw !important;
+  }
+  .middle-right {
+    height: 0.7vw !important;
+    top: 32.5vw !important;
+  }
+  .bottom-right {
+    bottom: 10.9vw !important;
+    height: 0.7vw !important;
+  }
+  .left-top-bottom {
+    width: 0.7vw !important;
+    left: 10.77vw !important;
+  }
+  .right-top-bottom {
+    width: 0.7vw !important;
+    right: 10.84vw !important;
+  }
+  .zero-nine {
+    top: 9vw !important;
+    left: 9vw !important;
+    width: 0.7vw !important;
+  }
+  .three-seven {
+    top: 9vw !important;
+    right: 9vw !important;
+    width: 0.7vw !important;
+  }
+}

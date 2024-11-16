@@ -30,9 +30,13 @@ export function changeLineColor(themeNumber) {
   // console.log("The value of --secondary-color is: " + rootVars.getPropertyValue('--lineColor'));
   if (themeNumber < 7) {
     r.style.setProperty('--secondary-color', colors[0]);
+    return colors[0]
   } else if (themeNumber > 6 && themeNumber < 9) {
     r.style.setProperty('--secondary-color', colors[1]);
+    return colors[1]
   } else {
     r.style.setProperty('--secondary-color', colors[2]);
+    return colors[2]
   }
+  
 }
