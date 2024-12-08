@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "./buttons.css";
-import { themeContext } from "../../context/AllContext";
+import { gameContext, themeContext } from "../../context/AllContext";
 import { randomThemeName, changeLineColor } from "./button";
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from "@emotion/react";
@@ -11,12 +11,10 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 
-
-
-
-
 const Buttons = () => {
   const [currentTheme, setCurrentTheme] = useContext(themeContext);
+  // eslint-disable-next-line no-unused-vars
+  const [gameMode, setGameMode] = useContext(gameContext);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [anchorEl, setAnchorEl] = useState(null);
   const [menuHeading, setMenuHeading] = useState("Choose Mode")
@@ -32,13 +30,18 @@ const Buttons = () => {
     value ? setMenuHeading(value) : setMenuHeading("Choose Mode");
     if (value == "Easy") {
       setMenuColor("green");
+      setGameMode(value);
     } else if (value == "Hard") {
       setMenuColor("orange")
+      setGameMode(value);
     } else if (value == "Impossible") {
       setMenuColor("red")
+      setGameMode(value);
     } else {
       setMenuColor("transparent")
+      setGameMode("Easy");
     }
+
     setAnchorEl(null);
   };
 
@@ -90,10 +93,10 @@ const Buttons = () => {
             </>
             :
             <>
-
               <button
+                className="btn btn-primary"
                 onClick={() => window.location.reload()}
-                className="btn btn-primary">
+              >
                 Restart
               </button>
               <button
@@ -133,7 +136,7 @@ const Buttons = () => {
               </Menu>
             </>
         }
-        <p className="current_theme_name" style={{ opacity: "0%" }}>{windowWidth > 768 ? currentTheme : ""}</p>
+        <p className="current_theme_name" style={{ display: 'none' }}>{windowWidth > 768 ? currentTheme : ""}</p>
       </div>
     </ThemeProvider>
   );

@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types"
-import "./easy.css";
+import "./style/game.css";
 
-const Easy = (props) => {
+const Impossible = (props) => {
   const { upScore } = props;
   const [matrix, setMatrix] = useState(Array(9).fill(0));
   const [winClass, setWinClass] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [stateSymbol, setSymbol] = useState("");
   const [call, setCall] = useState(true);
 
@@ -132,6 +133,7 @@ const Easy = (props) => {
 
   return (
     <div className="container">
+      <h1>This is Impossible mode</h1>
       <div className="wrapper">
         <div className="box" onClick={(e) => handelClick(e)} id="box1" />
         <div className="box" onClick={(e) => handelClick(e)} id="box2" />
@@ -149,7 +151,7 @@ const Easy = (props) => {
   );
 }
 
-Easy.propTypes = {
+Impossible.propTypes = {
   upScore: PropTypes.func,
 }
-export default Easy;
+export default Impossible;
